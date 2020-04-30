@@ -130,12 +130,12 @@ async function runSpeedTest() {
             })
         })
         .catch(err => {
-            logger.error(`Finished speedtest with error in ${Math.floor((Date.now() - start) / 1000)}s\n${err}`);
             if (retries < maxRetries) {
+                logger.error(`Finished speedtest with error in ${Math.floor((Date.now() - start) / 1000)}s\n${err}`);
                 retries++;
                 runSpeedTest();
             } else {
-                logger.fatal(`Terminated speedtest after ${maxRetries} retries, no data has been saved`);
+                logger.fatal(`Terminated speedtest after ${maxRetries} retries, no data has been saved\n${err}`);
             }
         });
 }
