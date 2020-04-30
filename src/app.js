@@ -10,7 +10,8 @@ const path = require('path'),
     log4js = require('log4js');
 
 const maxRetries = 3,
-    scriptname = path.basename(__filename, path.extname(__filename));
+    scriptname = path.basename(__filename, path.extname(__filename)),
+    logFile = path.join(__dirname, '..', 'logs', 'speedtest.log');
 
 let retries = 0;
 
@@ -71,7 +72,7 @@ const influx = new Influx.InfluxDB({
  */
 log4js.configure({
     appenders: {
-        [scriptname]: { type: 'dateFile', filename: 'logs/speedtest.log', compress: true }
+        [scriptname]: { type: 'dateFile', filename: logFile, compress: true }
     },
     categories: {
         default: { appenders: [scriptname], level: 'debug' }
