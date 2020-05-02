@@ -15,10 +15,10 @@ This application is currently running on a RaspberryPi 4(b) directly connected t
 * Using restart option `always`
 * Publishing standard ports
 * Binding InfluxDB data directory (usefull to recover data in case)
-* No configuration required, the application will add its own DB
 ```
  docker run -d --name=influxdb --restart=always -p 8086:8086 -v /abs/path/to/speedtest/repo/influxdb:/var/lib/influxdb influxdb
 ```
+* No further configuration is required, run the appication once with `node src/app.js` to create the DB for InfluxDB
 
 ### Grafana for Docker
 * Running the Grafana docker in detached mode (-d)
