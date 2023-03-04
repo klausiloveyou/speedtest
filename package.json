@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "influx": "^5.5.1",
-    "log4js": "^6.2.1",
+    "log4js": "^6.4.0",
     "speedtest-net": "^2.1.1"
   }
 }
